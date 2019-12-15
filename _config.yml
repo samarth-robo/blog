@@ -17,7 +17,7 @@ title: Daily Computer Vision
 author: Samarth Brahmbhatt
 email: samarth.robo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-Things I need to do to get computer vision working :)
+  Things I need to do to get computer vision working :slightly_smiling_face: (<a href="https://github.com/samarth-robo/blog" target="_blank">source</a>)
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://samarth-robo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  samarth-robo
@@ -28,6 +28,7 @@ BASE_PATH : https://samarth-robo.github.io.com/blog
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jemoji
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
