@@ -17,7 +17,7 @@ title: Daily Computer Vision
 author: Samarth Brahmbhatt
 email: samarth.robo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-Things I find I need to do to get computer vision working :) (<a href="https://github.com/samarth-robo/blog" target="_blank">source</a>)
+Things I need to do to get computer vision working :)
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://samarth-robo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  samarth-robo
