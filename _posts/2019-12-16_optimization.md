@@ -1,3 +1,9 @@
+---
+layout: mathpost
+title:  "Optimization"
+mathjax: true
+categories: [math, optimization]
+---
 # Optimization
 
 ## Iterative optimization
