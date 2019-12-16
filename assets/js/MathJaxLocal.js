@@ -51,6 +51,8 @@ MathJax.Hub.Config({
       Re: ['\\mathop{\\mathrm{Re}}'],
       Im: ['\\mathop{\\mathrm{Im}}'],
       Res: ['\\mathop{\\mathrm{Res}}'],
+      
+      homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
     }
   }
 });
