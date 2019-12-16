@@ -1,6 +1,6 @@
 {% if page.mathjax %}
 <!-- https://docs.mathjax.org/en/latest/configuration.html#local-config-files -->
 <script type="text/javascript"
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML,https://github.com/samarth-robo/blog/blob/gh-pages/assets/js/MathJaxLocal.js">
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_HTMLorMML,{{ site.baseurl | prepend: site.url }}/assets/js/MathJaxLocal.js">
 </script>
 {% endif %}

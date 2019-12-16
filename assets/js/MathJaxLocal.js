@@ -14,8 +14,9 @@ MathJax.Hub.Config({
     TagSide: "left",
     Macros: {      
       homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
+      ensuremath: '',
     }
   }
 });
 
-MathJax.Ajax.loadComplete("https://github.com/samarth-robo/blog/blob/gh-pages/assets/js/MathJaxLocal.js");
+MathJax.Ajax.loadComplete("assets/js/MathJaxLocal.js");
