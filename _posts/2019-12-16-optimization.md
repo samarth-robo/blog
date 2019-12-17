@@ -2,7 +2,7 @@
 layout: mathpost
 title:  "Optimization"
 mathjax: true
-categories: [math, optimization]
+tags: [math, optimization]
 ---
 ## Iterative optimization
 Many problems involve minimizing the squared L2 norm of some error, which is a non-linear function of some parameters $\theta$.
