@@ -19,4 +19,4 @@ MathJax.Hub.Config({
   }
 });
 
-MathJax.Ajax.loadComplete("assets/js/MathJaxLocal.js");
+MathJax.Ajax.loadComplete("https://samarth-robo.github.io/blog/assets/js/MathJaxLocal.js");
