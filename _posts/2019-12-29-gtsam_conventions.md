@@ -14,12 +14,12 @@ inverse transformations.
 - 3D points use uppercase letters, 2D points use lowercase letters.
 
 # Pose
-Name your pose variables like how you would write them on paper. The pose $^wTc$ of camera $c$ in the world coordinate frame
+Name your pose variables like how you would write them on paper. The pose $^wT_c$ of camera $c$ in the world coordinate frame
 $w$ is named `wTc`.
 In GTSAM jargon, `c` is the *pose coordinate* frame, and `w` is the *world coordinate* frame.
 
 # Composing Poses
-Math: $^oTc =~^oTw~\cdot~^wTc$.
+Math: $^oTc =~^oT_w~\cdot~^wT_c$.
 
 GTSAM code:
 ```cpp
@@ -29,7 +29,7 @@ Pose3 oTc = oTw.compose(wTc);
 ```
 
 # Transforming Points *From* Pose Coordinates
-Math: $^w\homo{X} =~^wTc~\cdot~^c\homo{X}$
+Math: $^w\homo{X} =~^wT_c~\cdot~^c\homo{X}$
 
 GTSAM Code:
 ```cpp
@@ -37,7 +37,7 @@ Point3 wX = wTc.transformFrom(cX);
 ```
 
 # Transforming Points *To* Pose Coordinates
-Math: $^c\homo{X} =~\left(^wTc\right)^{-1}~\cdot~^w\homo{X}$
+Math: $^c\homo{X} =~\left(^wT_c\right)^{-1}~\cdot~^w\homo{X}$
 
 GTSAM Code:
 ```cpp
