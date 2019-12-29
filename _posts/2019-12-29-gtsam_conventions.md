@@ -45,7 +45,7 @@ Point3 cX = wTc.transformTo(wX);
 ```
 
 # Cameras
-The GTSAM pinhole camera classes (e.g. [PinholeBase](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp))
+The GTSAM pinhole camera classes (e.g. [`PinholeBase`](https://github.com/borglab/gtsam/blob/develop/gtsam/geometry/CalibratedCamera.cpp))
 internally use `transformTo()` to transform 3D points into the camera coordinates, so you should use the pose of the camera
 w.r.t. world while constructing the object:
 ```cpp
