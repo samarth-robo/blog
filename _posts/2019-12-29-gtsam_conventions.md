@@ -10,7 +10,7 @@ It also describes best practices for naming your 3D point and pose variables so 
 inverse transformations.
 
 # Points
-- Always name your 3D points like how you would on paper. A point $^cX$ in the camera coordinate system $c$ is named $cX$.
+- Always name your 3D points like how you would on paper. A point $^cX$ in the camera coordinate system $c$ is named `cX`.
 - 3D points use uppercase letters, 2D points use lowercase letters.
 
 # Pose
@@ -19,7 +19,7 @@ $w$ is named `wTc`.
 In GTSAM jargon, `c` is the *pose coordinate* frame, and `w` is the *world coordinate* frame.
 
 # Composing Poses
-Math: $^oTc = ^oTw \cdot ^wTc$.
+Math: $^oTc =~^oTw~\cdot~^wTc$.
 
 GTSAM code:
 ```cpp
@@ -29,7 +29,7 @@ Pose3 oTc = oTw.compose(wTc);
 ```
 
 # Transforming Points *From* Pose Coordinates
-Math: $^w\homo{X} = ^wTc \cdot ^c\homo{X}$
+Math: $^w\homo{X} =~^wTc~\cdot~^c\homo{X}$
 
 GTSAM Code:
 ```cpp
@@ -37,7 +37,7 @@ Point3 wX = wTc.transformFrom(cX);
 ```
 
 # Transforming Points *To* Pose Coordinates
-Math: $^c\homo{X} = \left(^wTc\right)^{-1} \cdot ^w\homo{X}$
+Math: $^c\homo{X} =~\left(^wTc\right)^{-1}~\cdot~^w\homo{X}$
 
 GTSAM Code:
 ```cpp
@@ -58,9 +58,9 @@ also use the same convention:
 $$
 \begin{align*}
 ^{sensor}\homo{X}
-&= ^{sensor}T_{world} \cdot ^{world}\homo{X}\\
-&= ^{sensor}T_{body} \cdot ^{body}T_{world} \cdot ^{world}\homo{X}\\
-&= \left( ^{world}T_{body} \cdot ^{body}T_{sensor} \right)^{-1} ^{world}\homo{X}
+&=~^{sensor}T_{world}~\cdot~^{world}\homo{X}\\
+&=~^{sensor}T_{body}~\cdot~^{body}T_{world}~\cdot~^{world}\homo{X}\\
+&= \left(^{world}T_{body}~\cdot~^{body}T_{sensor}\right)^{-1}~\cdot~^{world}\homo{X}
 \end{align*}
 $$
 
