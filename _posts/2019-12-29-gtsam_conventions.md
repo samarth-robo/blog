@@ -5,7 +5,7 @@ mathjax: true
 tags: [math, geometry]
 ---
 
-This post describes the 3D geometry conventions used in the famous [GTSAM](gtsam.org) geometry optimization library.
+This post describes the 3D geometry conventions used in the famous [GTSAM](https://gtsam.org/) geometry optimization library.
 It also describes best practices for naming your 3D point and pose variables so that you don't get lost in the web of 
 inverse transformations.
 
