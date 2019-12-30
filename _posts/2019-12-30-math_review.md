@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: mathpost
 title:  "Math Review"
 mathjax: true
 tags: [review, math]
