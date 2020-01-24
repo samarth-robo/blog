@@ -18,3 +18,4 @@ Here are the ones I've solved from now on:
 - [1115. Print foobar Alternatively](https://leetcode.com/problems/print-foobar-alternately)
 - [1116. Print Zero Even Odd](https://leetcode.com/problems/print-zero-even-odd/)
 - [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) (connected components, disjont set)
+- [1219. Path with Maximum Gold](https://leetcode.com/problems/path-with-maximum-gold/)
