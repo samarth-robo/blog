@@ -10,7 +10,7 @@ tags: [review, coding]
 
 # Python
 - [deque](https://pymotw.com/3/collections/deque.html)
-- Concurrency - [threading](https://pymotw.com/3/threading/) | [multiprocessing](https://pymotw.com/3/multiprocessing/)
+- Concurrency: [threading](https://pymotw.com/3/threading/), [multiprocessing](https://pymotw.com/3/multiprocessing/)
 
 [Leetcode](leetcode.com) - don't know how to show the list of my past attempted problems :confused:
 Here are the ones I've solved from now on:
