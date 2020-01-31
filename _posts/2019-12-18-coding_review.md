@@ -6,6 +6,7 @@ tags: [review, coding]
 
 # C++
 - [Nice tutorials](http://www.cplusplus.com/doc/tutorial/)
+- [Static member functions](https://www.learncpp.com/cpp-tutorial/812-static-member-functions/)
 - [Friend function](https://docs.microsoft.com/en-us/cpp/standard-library/overloading-the-output-operator-for-your-own-classes) use for overloading the `<<` operator
 
 # Python
