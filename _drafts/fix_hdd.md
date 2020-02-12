@@ -10,18 +10,17 @@ Such processes show up with a "D" status in `htop`, and they cannot be interrupt
 You will also not be able to `umount` the disk.
 
 1. If you reboot the computer at this stage, it will get stuck in an `fsck` check while booting and never get past that.
-So the best is to remove the HDD's entry from `/etc/fstab`, and unplugging the HDD *before* rebooting.
-If you forgot to do that, Ubuntu will usually put you into a root shell after showing something like
-"Welcome to emergency mode". Use this to remove the `fstab` entry for the HDD, unplug the HDD, and then `reboot`.
+So the best is to comment out the HDD's entry from `/etc/fstab` **before** rebooting.
 
-2. Now you should be 
+2. If you forgot to do that, Ubuntu will usually put you into a root shell after showing something like
+"Welcome to emergency mode". Use this to comment out the `fstab` entry for the HDD `reboot`.
 
-Emergency mode -> edit fstab -> reboot
+3. Now you should be in a working environment with the HDD plugged in, but not mounted.
 
-sudo fdisk -l
+4. Find out the drive device (e.g. `/dev/sde1`) using `sudo fdisk -l`.
 
-sudo ntfsfix /dev/"device name"
+5. If it is an `ext4` disk, use the `fsck` tool to fix it.
 
-Windows chkdsk
+6. If it is an NTFS disk, use `sudo ntfsfix <device>`. Although, as mentioned [here](https://askubuntu.com/a/901307), that is only a temporary fix, and the more appropriate fix is to use `chkdsk.exe` on a Windows computer. Note: It seems like `chkdsk.exe` assumes the entire disk is full while estimating the time for fixing, so don't be scared if it estimates a crazy long time. Things go much faster for the empty sectors of the HDD.
 
-https://askubuntu.com/a/901307
+7. Uncomment the HDD's entry in `/etc/fstab`, and if you fixed it correctly, you should be good to go!
