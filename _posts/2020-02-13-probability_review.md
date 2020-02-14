@@ -5,7 +5,7 @@ tags: [math, review]
 ---
 
 I want to note down simple explanations of two probability terms that have confused me in the past. Consider this example:
-![Bayes Net](blog/assets/images/bayes_net.png)
+<img src="{{site.baseurl}}/assets/images/bayes_net.png">
 (above) example Bayes Net, taken from [lecture notes by Mark Gales](http://mi.eng.cam.ac.uk/~mjfg/local/4F10.old/lect10.pdf). 
 
 ## Conditional Independence
