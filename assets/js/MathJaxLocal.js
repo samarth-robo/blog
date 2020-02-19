@@ -12,9 +12,9 @@ MathJax.Hub.Config({
     equationNumbers: { autoNumber: "AMS" },
     extensions: ["AMSmath.js", "AMSsymbols.js","AMScd.js"],
     TagSide: "left",
-    Macros: {      
-      homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
+    Macros: {
       ensuremath: '',
+      homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
       norm: ['\\ensuremath{\vert \vert #1 \vert \vert}', 1],
     }
   }
