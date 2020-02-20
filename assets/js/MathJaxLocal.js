@@ -13,9 +13,9 @@ MathJax.Hub.Config({
     extensions: ["AMSmath.js", "AMSsymbols.js","AMScd.js"],
     TagSide: "left",
     Macros: {
-      ensuremath: '',
       homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
       norm: ['\\ensuremath{\\vert \\vert #1 \\vert \\vert}', 1],
+      ensuremath: '',
     }
   }
 });
