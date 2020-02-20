@@ -15,7 +15,7 @@ MathJax.Hub.Config({
     Macros: {
       ensuremath: '',
       homo: ['\\ensuremath{\\tilde{\\mathbf{#1}}}', 1],
-      norm: ['\\ensuremath{\vert \vert #1 \vert \vert}', 1],
+      norm: ['\\ensuremath{\\vert \\vert #1 \\vert \\vert}', 1],
     }
   }
 });
