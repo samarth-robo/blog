@@ -10,4 +10,4 @@ $A_{m \times n} = U_{m \times n} \Sigma_{n \times n} V_{n \times n}^T$, where $\
 $U$ columns are eigenvectors of $AA^T$, $V$ columns are eigenvectors of $A^TA$.
 
 ## Uses
-1. Solution to $\min_{\mathbf{x}} A\mathbf{x} = 0$ s.t. $\norm{\mathbf{x}} = 1$ is the last column of $V$, where $A = U \Sigma V^T$.
+1. Solution to $\min_{\mathbf{x}} A\mathbf{x} = 0$ s.t. $\norm{\mathbf{x}} = 1$ is the last column of $V$, where $A = U \Sigma V^T$ (proof in Hartley and Zisserman A5.3).
