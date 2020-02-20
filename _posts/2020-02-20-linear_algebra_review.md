@@ -13,6 +13,7 @@ $A_{m \times n} = U_{m \times n} \Sigma_{n \times n} V_{n \times n}^T$, where $\
 $U$ columns are eigenvectors of $AA^T$, $V$ columns are eigenvectors of $A^TA$. Singular values are square roots of eigenvalues. Proof:
 
 Consider the SVD:
+
 $$
 \begin{align*}
 A &= U \Sigma V^T\\
@@ -20,6 +21,7 @@ A &= U \Sigma V^T\\
 &= U \Sigma^2 U^T
 \end{align*}
 $$
+
 which is an eigen decomposition of $AA^T$. Eigenvalues are squared elements of $\Sigma$, and columns of $U$ are the eigenvectors. Similar proof for columns of $V$ being eigenvectors of $A^TA$.
 
 ## Uses
