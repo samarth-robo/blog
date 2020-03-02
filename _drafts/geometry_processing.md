@@ -1,8 +1,8 @@
 ---
 layout: mathpost
-title:  "The Physics behind Grasp Quality Metrics"
+title:  "Geometry Processing"
 mathjax: true
-tags: [math, geometry, robotics]
+tags: [math, geometry]
 ---
 
 - Surface normals computation
