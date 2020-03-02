@@ -9,4 +9,4 @@ tags: [math, geometry, robotics]
 - Principal directions of curvature (xxx tensor)
 - PCA applications
 
-[(page source)]()
+[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/geometry_processing.md)
