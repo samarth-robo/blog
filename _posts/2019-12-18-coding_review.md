@@ -24,5 +24,6 @@ Here are the ones I've solved from now on:
 - [406. Queue Reconstruction by Height](https://leetcode.com/problems/queue-reconstruction-by-height/)
 - [973. K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/) - [quickselect](https://en.wikipedia.org/wiki/Quickselect)
 - [1094. Car Pooling](https://leetcode.com/problems/car-pooling/submissions/)
+- [427. Construct Quad Tree](https://leetcode.com/problems/construct-quad-tree/)
 
 [(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2019-12-18-coding_review.md)
