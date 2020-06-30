@@ -19,7 +19,7 @@ $w$ is named `wTc`.
 In GTSAM jargon, `c` is the *pose coordinate* frame, and `w` is the *world coordinate* frame.
 
 # Composing Poses
-Math: $^oTc =~^oT_w~\cdot~^wT_c$.
+Math: $^oT_c =~^oT_w~\cdot~^wT_c$.
 
 GTSAM code:
 ```cpp
