@@ -84,5 +84,3 @@ excellent work you just presented!
 - If a line has a single word, can you re-word the paragraph so that a line is saved?
 - If you find yourself using a lot of subsections or any subsubsections, consider converting them to bold text at the start
 of paragraphs.
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2020-05-24-paper_writing.md)

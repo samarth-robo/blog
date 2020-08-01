@@ -41,5 +41,3 @@ base/moduleN/bar.py
 then you need an `init_paths.py` in `scripts`, containing `import sys; sys.path.append('.')`. Note the `.`, not `..`. This is because I intend to run scripts from `base` like `python scripts/script1.py`, so `base` will be in Python's `sys.path`. 
 
 3. Run with `python -m`. I do not consider this as an option because I dislike it.
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2020-07-21-rel_abs_imports.md)

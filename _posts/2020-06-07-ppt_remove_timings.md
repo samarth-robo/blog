@@ -12,5 +12,3 @@ anything. Some digging around revealed that timings are visible in the "Transiti
 and uncheck the "After" box as shown below:
 
 <img src="{{site.baseurl}}/assets/images/ppt_slide_timings.png">
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2020-06-07-ppt_remove_timings.md)

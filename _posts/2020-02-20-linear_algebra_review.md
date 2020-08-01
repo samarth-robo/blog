@@ -32,5 +32,3 @@ which is an eigen decomposition of $AA^T$. Eigenvalues are squared elements of $
 # Miscellaneous
 - For skew-symmetric $A$, $\mathbf{x}^T A \mathbf{x} = 0$, $\forall \mathbf{x}$.
 - Matrix $A$ is positive semidefinite $A \succeq 0$ iff all its eigenvalues are $\geq 0$. 
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2020-02-20-linear_algebra_review.md)

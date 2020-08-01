@@ -79,5 +79,3 @@ Pose3 world_T_sensor = world_T_body.compose(body_T_sensor);
 Point3 sensor_X = world_T_sensor.transformTo(world_X);
 ```
 and then project it to the image using instrinsics and then compare it to the detection `sensor_p`.
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2019-12-29-gtsam_conventions.md)

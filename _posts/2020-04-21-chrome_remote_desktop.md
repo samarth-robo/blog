@@ -17,5 +17,3 @@ If you don't connect to your remote computer for a few days, you might find that
 ```
 /opt/google/chrome-remote-desktop/chrome-remote/desktop --reload
 ``` 
-
-[(page source)](https://github.com/samarth-robo/blog/blob/gh-pages/_posts/2020-04-21-chrome_remote_desktop.md)
