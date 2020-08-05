@@ -22,6 +22,8 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://samarth-robo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  samarth-robo
 twitter_username: samarth_robo
+disqus:
+  shortname: dailycv
 production_url : https://samarth-robo.github.io.com/blog
 BASE_PATH : https://samarth-robo.github.io.com/blog
 
@@ -42,3 +44,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
