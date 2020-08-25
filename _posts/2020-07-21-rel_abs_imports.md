@@ -38,6 +38,6 @@ base/module1/foo.py
 base/moduleN/__init__.py
 base/moduleN/bar.py
 ```
-then you need an `init_paths.py` in `scripts`, containing `import sys; sys.path.append('.')`. Note the `.`, not `..`. This is because I intend to run scripts from `base` like `python scripts/script1.py`, so `base` will be in Python's `sys.path`. 
+then you need an `init_paths.py` in `scripts`, containing `import sys; sys.path.append('.')`. Note the `.`, not `..`. This is because I intend to run scripts from `base` like `python scripts/script1.py`. So `scripts` is already in Python's `sys.path`, and the `append()` statement puts `base` in there too. Then, add `import init_paths.py` at the start of every script in `scripts`. After that, you can import like `from module1 import foo`. 
 
 3. Run with `python -m`. I do not consider this as an option because I dislike it.
