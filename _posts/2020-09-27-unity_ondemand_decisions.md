@@ -13,7 +13,7 @@ tries to condense some of the things I have learnt from browsing the forums and 
 # Action and Decision Frequency
 By default, the environment is stepped at every Unity `FixedUpdate()` ([source](https://forum.unity.com/threads/how-do-i-manually-call-collectobservations-and-agentaction.834385/#post-5514061)).
 `FixedUpdate()` is where Unity's physics loop runs, and it is guaranteed to run at a fixed frequency independent of rendering fluctuations. Actions predicted by
-RL are applied to the agent at every envionment step. But decisions are **not** requested from the RL alorithm at evey environment step. The details depend on
+RL are applied to the agent at every envionment step. But decisions are **not** requested from the RL alorithm at every environment step. The details depend on
 the `DecisionRequester` component of your agent. If "Take Actions Between Decisions" is checked in the `DecisionRequester`, the same RL-predicted action is repeated
 for `Decision Step` (which is also a property of the `DecisionRequester`) frames. If not checked, a zero action is applied. All this is mentioned in the
 [`DecisionRequester` API](https://docs.unity3d.com/Packages/com.unity.ml-agents@1.0/api/Unity.MLAgents.DecisionRequester.html), but is hard to find in the
