@@ -90,3 +90,14 @@ You are good to go! On a Mac remote client, I have had good experience connectin
 [RealVNC Viewer](https://www.realvnc.com/en/connect/download/viewer/macos/).
 
 The good thing about the method I described above is that it works for a multi-user computer, and **does not need sudo** permissions for any user!
+
+## Special Instructions for Multi-User
+Some users might connect and encounter a blank and unresponsive screen. This bugged me for a while, but [this answer](https://askubuntu.com/a/672000)
+finally suggested the solution. It has to do with virtual terminals. Each user's X server starts in a different virtual terminal. In fact, you are changing
+virtual terminals when you press `Alt+Ctrl+F1-8`, and can switch between users in this way! But even if the previous user to access their VNC connection
+disconnected, the current virtual terminal will not be yours. So each user will need to know their virtual terminal number using `sudo fgconsole` (only needed 
+once when the computer is rebooted). Unfortunately,
+SSH has its own new virtual terminal, so you will have to run this from your real X session i.e. while physically present in front of your computer. When you
+want to connect to VNC, change the current virtual terminal to yours using `sudo chvt <your virtual terminal number>` (this does work over SHH!).
+
+Because of this virtual terminal issue. multiple users will not be able to access their VNC connections simultaneously.
