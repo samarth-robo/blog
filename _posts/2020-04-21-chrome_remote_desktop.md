@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chrome Remote Desktop Hacks"
-tags: [misc]
+tags: [remote_work]
 ---
 Working remotely is essential in these COVID-19 times. I have found [Chrome Remote Desktop](https://remotedesktop.google.com/) to be very useful. Its competitor TeamViewer often flags academic use wrongly as commercial use, causing inconvenience. In this post, I want to write about two ways you can hack Chrome Remote Desktop to make it more productive for Linux.
 
