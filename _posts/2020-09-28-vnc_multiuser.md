@@ -64,7 +64,9 @@ log in and set the screen to lock after 5 minutes of inactivity. That will elimi
 OK, so once you have created the password and determined clipping dimensions, you can enable the service by `systemctl --user enable x11vnc.service`.
 This is necessary before starting the service, it also makes the service run automatically everytime the computer is rebooted. Next, start the service by
 `systemctl --user start x11vnc.service`. Check the status: `systemctl --user status x11vnc.service`:
-```● x11vnc.service - Remote desktop service (VNC)
+
+```
+● x11vnc.service - Remote desktop service (VNC)
    Loaded: loaded (/home/@@@/.config/systemd/user/x11vnc.service; enabled; vendor preset: enabled)
    Active: active (running) since Mon 2020-09-28 16:28:29 PDT; 1s ago
   Process: 23499 ExecStartPre=/bin/sh -c while ! pgrep -U "$USER" Xorg; do sleep 2; done (code=exited, status=0/SUCCESS)
