@@ -23,7 +23,7 @@ but the [instructions](https://github.com/LibVNC/x11vnc#building-x11vnc) worked 
 Next, you want to make sure `x11nvc` starts automatically every time you log in. Combining knowledge [from a](https://wiki.archlinux.org/index.php/TigerVNC)
 [few](https://wiki.archlinux.org/index.php/Systemd/User) [forum](https://wiki.archlinux.org/index.php/Systemd#Using_units)
 [pages](https://bbs.archlinux.org/viewtopic.php?id=230545) shows that you can use the `systemctl` method to set up a service in the "user" mode. This service is
-not system-wide, it only activates when the user logs in after booting the computer (this creating the X session which will be relayed by x11vnc). To do this,
+not system-wide, it only activates when the user logs in after booting the computer (thus creating the X session which will be relayed by `x11vnc`). To do this,
 place the following content in `~/.config/systemd/user/x11vnc.service`:
 
 ```
@@ -98,6 +98,6 @@ virtual terminals when you press `Alt+Ctrl+F1-8`, and can switch between users i
 disconnected, the current virtual terminal will not be yours. So each user will need to know their virtual terminal number using `sudo fgconsole` (only needed 
 once when the computer is rebooted). Unfortunately,
 SSH has its own new virtual terminal, so you will have to run this from your real X session i.e. while physically present in front of your computer. When you
-want to connect to VNC, change the current virtual terminal to yours using `sudo chvt <your virtual terminal number>` (this does work over SHH!).
+want to connect to VNC, change the current virtual terminal to yours using `sudo chvt <your virtual terminal number>` (this does work over SSH!).
 
 Because of this virtual terminal issue. multiple users will not be able to access their VNC connections simultaneously.
