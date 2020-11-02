@@ -8,7 +8,7 @@ Working from home? Chances are you need to see something visually on your office
 is great for this. But alas, some companies block it.
 
 In that case, you need to set up your own VNC server on your office workstation, and install a client on your home computer. One important property I like in
-the VNC server is that should connect to the current ongoing X session rather than creating a new X session every time you connect from the client.
+the VNC server is that it should connect to the current ongoing X session rather than creating a new X session every time you connect from the client.
 This allows windows to persist between connections, essentially as if you were directly at your office workstation. There are great tools to allow this, but in
 my experience there are not enough clear explanatory articles that allow inexperienced users to get painlessly setup. Once you gain some experience, you can
 make these tools do amazing things, because the tools themselves have detailed technical documentation.
@@ -100,4 +100,4 @@ once when the computer is rebooted). Unfortunately,
 SSH has its own new virtual terminal, so you will have to run this from your real X session i.e. while physically present in front of your computer. When you
 want to connect to VNC, change the current virtual terminal to yours using `sudo chvt <your virtual terminal number>` (this does work over SSH!).
 
-Because of this virtual terminal issue. multiple users will not be able to access their VNC connections simultaneously.
+Because of this virtual terminal issue, multiple users will not be able to access their VNC connections simultaneously.
