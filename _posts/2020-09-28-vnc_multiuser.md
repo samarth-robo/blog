@@ -57,7 +57,7 @@ log in and set the screen to lock after 5 minutes of inactivity. That will elimi
   an SSH connection, and then point the local VNC client to `http://localhost:5900`. You can set up this SSH tunnel by executing the following command in a 
   terminal on your client computer: `ssh -N -L 5900:localhost:5900 <office-workstation-hostname>`.
   - `-clip 3840x2160+0+1141` is used to clip the X buffer in case of a multi-motinor setup. To get correct values for clipping, run `x11vnc` without the clip 
-  argument. It will print our the clipping information for each monitor when it is starting up.
+  argument. It will print out the clipping information for each monitor when it is starting up.
   - `-rfbauth %h/.vnc/passwd` adds another layer of security by requiring a password to establish the VNC connection. For this, you will need to run
   `x11vnc -storepasswd` once and set the password. This will store the hashed password in `~/.vnc/passwd`.
   
