@@ -117,6 +117,9 @@ So if you invert _both_ robot kinematics and marker detection data in the
 hand-eye calibration equations, you get the pose of the calibration target w.r.t.
 robot end effector!
 
+The same reasoning applies to the pose of the calibration target w.r.t. robot
+base for the eye-on-hand scenario.
+
 # Further Steps
 The [paper](https://journals.sagepub.com/doi/10.1177/02783649922066213) I linked
 above and the code linked below solve the "$AX=XB$" problem in the least-squares
