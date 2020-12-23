@@ -1,6 +1,6 @@
 ---
 layout: mathpost
-title:  "Camera-Robot Extrisic Calibration"
+title:  "Camera-Robot Extrinsic Calibration"
 mathjax: true
 tags: [math, robotics, geometry]
 ---
