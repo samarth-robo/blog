@@ -130,6 +130,13 @@ You can use [GTSAM](https://gtsam.org) or the
 [Ceres solver](http://ceres-solver.org) for that. Why would this improve the
 solution?
 
+Instead of casting this problem as $AX=XB$, you could cast it as $AX=ZB$, where
+the $A$ and $B$ matrices are made from poses and not motions. This formulation
+has some advantages which help in optimization. See
+[this Twitter thread](https://twitter.com/5trobl/status/1341880981477707776?s=20)
+for justifications, and
+[this paper](https://ieeexplore.ieee.org/abstract/document/4059150) for details.
+
 # Code
 
 In spite of being a required basic ingredient for robot grasping research, I was 
