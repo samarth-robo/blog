@@ -51,7 +51,7 @@ log in and set the screen to lock after 5 minutes of inactivity. That will elimi
   this path to wherever you installed the binary (e.g. somewhere in your home folder if you don't have sudo permissions).
   - `-rfbport 5900`: 5900 is the port number that your VNC client will need to connect to. In a multi-user setup,
   don't forget to assign a different port number for each user.
-  - `-localhost` indicates that `x11vnc` should only accept connections coming from `localhost`. But you want to connect from a remote client! But we will use
+  - `-localhost` indicates that `x11vnc` should only accept connections coming from `localhost`. But you want to connect from a remote client! We will still use
   localhost because we want the connection to be encrypted (VNC protocol by itself sends everything unencrypted) by
   [SSH tunneling](https://www.ssh.com/ssh/tunneling/). This means we will forward port 5900 on the office workstation to port 5900 on our local client through
   an SSH connection, and then point the local VNC client to `http://localhost:5900`. You can set up this SSH tunnel by executing the following command in a 
