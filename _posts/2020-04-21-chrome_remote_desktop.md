@@ -15,5 +15,5 @@ Follow the steps mentioned in [this StackExchange answer](https://superuser.com/
 ## Un-freezing the Chrome Remote Desktop server
 If you don't connect to your remote computer for a few days, you might find that you are no longer able to connect to it. It will show up as 'Online' in your local Chrome Remote Desktop screen, but the connection might not go through. To solve this, SSH into your remote computer, and reload the server config:
 ```
-/opt/google/chrome-remote-desktop/chrome-remote/desktop --reload
+/opt/google/chrome-remote-desktop/chrome-remote-desktop --reload
 ``` 
