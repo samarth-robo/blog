@@ -25,7 +25,7 @@ iPhone, follow these steps:
 is done
 [using `rvctl`](https://developer.apple.com/documentation/network/recording_a_packet_trace)
 - Install [WireShark](https://www.wireshark.org) on your computer and point it
-to the interface (typocally called `rvi0`) created by `rvctl`
+to the interface (typically called `rvi0`) created by `rvctl`
 - Look at the packet addresses as the phone app communicates with the camera
 to get the IP address of the camera
 
