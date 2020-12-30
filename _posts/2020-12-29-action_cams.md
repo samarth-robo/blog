@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Transferring Files from Action Cameras to Computers"
-tags: [misc]
+tags: [misc,hardware,macos]
 ---
 
 I was recently gifted an "action camera": the
