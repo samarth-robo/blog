@@ -32,6 +32,8 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -51,3 +53,13 @@ defaults:
       type: "posts"
     values:
       comments: true
+
+twitter:
+  username: samarth_robo
+  card: summary
+
+social:
+  name: Samarth Brahmbhatt
+  links:
+    - https://twitter.com/samarth_robo
+    - https://github.com/samarth-robo
