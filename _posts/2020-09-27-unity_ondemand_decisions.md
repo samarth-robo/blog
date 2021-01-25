@@ -33,7 +33,7 @@ be called. Here is a code snippet (it should be interpreted in the context of `D
 void MakeRequests(int academyStepCount) {
     if (condition) {  // use your condition here
         if (academyStepCount%decisionStep==0) RequestDecision();
-        else if (takeActionsBetweenDecisions) RequestAction();
+        if (takeActionsBetweenDecisions) RequestAction();
     } else {
         // do something else if needed
     }
