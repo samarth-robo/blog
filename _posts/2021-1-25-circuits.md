@@ -99,7 +99,7 @@ We will do this with an op-amp.
 $RC$ filter. You can use
 [this PWM calculator](http://sim.okawa-denshi.jp/en/PWMtool.php) to pick $R$
 and $C$ values.
-- Using the ["golden rules"](https://en.wikipedia.org/wiki/Operational_amplifier#Ideal_op_amps)
+- Using the "[golden rules](https://en.wikipedia.org/wiki/Operational_amplifier#Ideal_op_amps)"
 of op-amps we know that the voltage drop across $R_1$ will equal the $RC$ filter
 output. $R_1$ does the job of converting voltage to current.
 - The 12 V battery - actuator - MOSFET Q1 - $R_1$ are all in series and form the
