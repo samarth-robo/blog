@@ -95,8 +95,8 @@ We will do this with an op-amp.
 
 ![4-20 mA current loop]({{site.baseurl}}/assets/images/circuits/current_loop.png)
 
-- First, the PWM signal is converted to a smooth analog signal using a lowpass
-$RC$ filter. You can use
+- First, the PWM signal is converted to a smooth analog signal using a lowpass RC filter
+($R_2$ and $C_1$). You can use
 [this PWM calculator](http://sim.okawa-denshi.jp/en/PWMtool.php) to pick $R$
 and $C$ values.
 - Using the "[golden rules](https://en.wikipedia.org/wiki/Operational_amplifier#Ideal_op_amps)"
