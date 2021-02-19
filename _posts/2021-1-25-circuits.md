@@ -108,3 +108,15 @@ using the Arduino PWM, the current $I$ varies from 4 mA to 20 mA, because $R_1$
 is 250 $\Omega$.
 - $R_1$ needs to be precisely 250 $\Omega$, so make sure you buy a precision
 resistor!
+
+## Links and Sources
+The following sources have been helpful to me:
+- [Arduino analog pin protection](https://arduino.stackexchange.com/questions/46300/analog-input-draws-current-when-arduino-is-turned-off)
+- [Voltage divider for reading sensors](https://electronics.stackexchange.com/questions/276337/how-to-step-down-analog-sensor-signal-voltage-using-voltage-divider)
+- [PNP and NPN sensors](https://industruino.com/forum/help-1/question/pnp-and-npn-sensors-35)
+- [Arduino forum thread on NPN sensors](https://forum.arduino.cc/index.php?topic=431915.0)
+- [Voltage to current signal conversion](https://www.allaboutcircuits.com/textbook/semiconductors/chpt-8/voltage-to-current-signal-conversion/)
+- Current output circuit design:
+[source 1](https://www.analog.com/en/analog-dialogue/articles/current-output-circuit-techniques-add-versatility.html) |
+[source 2](http://www.learningaboutelectronics.com/Articles/Current-source-circuit.php)
+- [The need (or lack thereof) of feedback resistors in op-amp circuits](https://electronics.stackexchange.com/a/239892)
