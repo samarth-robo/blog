@@ -4,7 +4,7 @@ title:  "Ubuntu 18.04 multi-user VNC access (Part 1)"
 tags: [remote_work]
 ---
 
-**NOTE**: This post also has a [Part 2]({% link _posts/2021-06-21-vnc_multiuser-2.md %}) which configures multi-user VNC to work through reboots.
+**NOTE**: This post also has a [Part 2]({{ site.baseurl }}{% post_url 2021-06-21-vnc_multiuser_2 %}) which configures multi-user VNC to work through reboots.
 
 Working from home? Chances are you need to see something visually on your office workstation. As I have said
 [before](https://samarth-robo.github.io/blog/2020/04/21/chrome_remote_desktop.html) Google Chrome Remote Desktop
@@ -108,4 +108,4 @@ Because of this virtual terminal issue, multiple users will not be able to acces
 
 ## Limitations
 The above method requires each user to log in physically at least once, so that the user-level `systemctl` services start. It also does not work if the computer
-is rebooted. [Part 2]({% link _posts/2021-06-21-vnc_multiuser-2.md %}) solves these issues.
+is rebooted. [Part 2]({{ site.baseurl }}{% post_url 2021-06-21-vnc_multiuser_2 %}) solves these issues.
