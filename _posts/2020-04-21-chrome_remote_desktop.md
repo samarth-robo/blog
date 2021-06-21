@@ -24,7 +24,7 @@ But if the computer shows up as offline with a message 'X server failed to start
 1. X server is actually running, but your user has somehow been logged out. You can verify this by running `systemctl status display-manager.service` and verifying
 that it shows `active(running)` in green somewhere in the output. To log into your user, you need an alternative way to access the X server, so that you can enter
 your credentials and log in. You can use the following steps:
-  - [Set up x11vnc]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %}) on your remote computer. Just compile and install `x11vnc`, no need to set up the
+  - [Set up x11vnc]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser_1 %}) on your remote computer. Just compile and install `x11vnc`, no need to set up the
 `systemctl` user service in `~/.config/systemd`
   - Run `x11vnc -auth guess` there. `-auth guess` uses the "MIT magic cookie" from your system-level display manager (e.g. `gdm`, `lightdm`) rather than your user-specific magic cookie. It will start a VNC server on your remote computer on port 5900. This is an unsecure passwordless server, so make sure you only run it temporarily!
   - Download a VNC client, like [RealVNC](https://www.realvnc.com/en/connect/download/viewer/) on your local computer
