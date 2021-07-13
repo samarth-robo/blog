@@ -10,7 +10,7 @@ We will use [`x11vnc`](https://github.com/LibVNC/x11vnc) to set up remote VNC ac
 - never needs physical presence at the computer
 - assumes one user with sudo permissions (called `BIGUSER`), and multiple other users without sudo permissions (called `SMALLUSER`)
 
-Please read [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser_1 %}) for `x11vnc` and `systemctl` basics.
+Please read [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %}) for `x11vnc` and `systemctl` basics.
 
 ## How to handle reboots?
 
@@ -59,7 +59,7 @@ WantedBy=graphical.target
 ```
 
 Notes:
-- The first service file is for the login `x11vnc` and the second one for the post-login `x11vnc`. See [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser_1 %})
+- The first service file is for the login `x11vnc` and the second one for the post-login `x11vnc`. See [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %})
 to understand how services work and the `x11vnc` commandline options.
 - Remember to change for each user: `USER` (username), `PORT` (5900, 5901, 5902 etc. separate port for each user but same for both files), `-clip` (screen offsets for each user).
 - Notice how the second service waits while the user's X server is created, and then kills that user's login `x11vnc` server.
@@ -75,7 +75,7 @@ sudo systemctl stop x11vnc-gdm-SMALLUSER.service
 SMALLUSER ALL=(ALL) NOPASSWD: /opt/vnc_commands/SMALLUSER_kill_login.sh, /bin/fgconsole, /bin/chvt
 ```
 - Notice this also gives `SMALLUSER` to run `fgconsole` and `chvt` as sudo, which are useful for switching between users as described at the end of
-[Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser_1 %}).
+[Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %}).
 - Finally, `sudo systemctl stop x11vnc-gdm-USER.service` in each `SMALLUSER`'s second service file is replaced with `sudo /opt/vnc_commands/SMALLUSER_kill_login.sh`.
 
 Finally, `BIGUSER` enables and starts both services for each user:
@@ -86,3 +86,9 @@ $ sudo systemctl start x11vnc-gdm-USER.service
 $ sudo systemctl enable x11vnc-gnome-shell-USER.service
 $ sudo systemctl start x11vnc-gnome-shell-USER.service
 ```
+
+## Next Steps
+
+See [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %}) for SSH tunneling from your local computer
+to the services running on the remote computer, and then controlling the remote computer using the 
+[RealVNC Viewer](https://www.realvnc.com/en/connect/download/viewer/macos/).
