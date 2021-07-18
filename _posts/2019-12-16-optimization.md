@@ -53,7 +53,7 @@ The four famous iterative optimization methods differ by different choices for a
   $$
   \begin{align*}
   \gamma \Delta &= -g_\theta\\
-  \implies \Delta &= \frac{1}{\gamma} \epsilon_\theta^T \epsilon
+  \implies \Delta &= -\frac{1}{\gamma} \epsilon_\theta^T \epsilon
   \end{align*}
   $$
 
@@ -64,7 +64,7 @@ The four famous iterative optimization methods differ by different choices for a
   $$
   \begin{align*}
   \left(\epsilon_\theta^T\epsilon_\theta + \lambda I\right) \Delta &= -g_\theta\\
-  \implies \Delta &= \left(\epsilon_\theta^T\epsilon_\theta + \lambda I\right)^{-1} \epsilon_\theta^T \epsilon
+  \implies \Delta &= -\left(\epsilon_\theta^T\epsilon_\theta + \lambda I\right)^{-1} \epsilon_\theta^T \epsilon
   \end{align*}
   $$
 
