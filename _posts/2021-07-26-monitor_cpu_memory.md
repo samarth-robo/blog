@@ -5,7 +5,7 @@ tags: [remote_work, misc]
 ---
 
 We often need to monitor the RAM usage of a long-running process. For example, to see if a mysterious segfault in 
-out ML training is caused by a memory leak. The following script runs your executable while logging its \% RAM and CPU
+out ML training is caused by a memory leak. The following script runs your executable while logging its % RAM and CPU
 usage to a `.txt` file.
 
 Run it like so: `$ . monitoring_script.sh`. (You will need to make it executable before the first time:
@@ -19,7 +19,8 @@ the long-running executable in the background, which prevents killing it through
 The the CPU and RAM usage is captured every 5 seconds, and written to `resource_usage.txt` in `memory cpu` format per
 line. The usage of the entire process tree created by `long_running_executable.sh` is captured.
 
-```
+`monitoring_script.sh`:
+```bash
 #!/usr/bin/env bash
 
 # trap logic from https://linuxconfig.org/how-to-propagate-a-signal-to-child-processes-from-a-bash-script
