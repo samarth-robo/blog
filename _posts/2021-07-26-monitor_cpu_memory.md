@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Monitoring Process Tree RAM and CPU usage"
+title:  "Monitoring Process Tree RAM and CPU Usage"
 tags: [remote_work, misc]
 ---
 
