@@ -24,7 +24,7 @@ line. The usage of the entire process tree created by `long_running_executable.s
 #!/usr/bin/env bash
 
 # trap logic from https://linuxconfig.org/how-to-propagate-a-signal-to-child-processes-from-a-bash-script
-trap 'kill "${MY_PID}"; wait "${MY_PID}"' SIGINT SIGTERM
+trap 'kill -- -"${MY_PGID}"; wait "${MY_PID}"' SIGINT SIGTERM
 
 resource_file="resource_usage.txt"
 echo "#memory cpu" > ${resource_file}
@@ -33,6 +33,7 @@ long_running_executable.sh &
 
 export MY_PID=$!
 echo ${MY_PID}
+export MY_PGID=$(ps opgid= ${MY_PID} | grep [0-9] | tr -d ' ')
 
 # https://unix.stackexchange.com/a/185799/453686
 while kill -0 ${MY_PID}; do
