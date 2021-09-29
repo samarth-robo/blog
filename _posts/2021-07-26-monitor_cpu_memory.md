@@ -5,7 +5,7 @@ tags: [remote_work, misc]
 ---
 
 We often need to monitor the RAM usage of a long-running process. For example, to see if a mysterious segfault in 
-out ML training is caused by a memory leak. The following script runs your executable while logging its % RAM and CPU
+our ML training is caused by a memory leak. The following script runs your executable while logging its % RAM and CPU
 usage to a `.txt` file.
 
 Run it like so: `$ . monitoring_script.sh`. (You will need to make it executable before the first time:
