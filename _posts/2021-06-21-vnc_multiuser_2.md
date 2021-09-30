@@ -50,7 +50,8 @@ Description=x11vnc server for Gnome shell session of USER
 User=USER
 Type=simple
 ExecStartPre=/bin/sh -c 'while ! pgrep -U "USER" Xorg; do sleep 2; done'
-ExecStart=/bin/sh -c 'sudo systemctl stop x11vnc-gdm-USER.service && /usr/bin/x11vnc -forever -shared -find -auth /home/USER/.Xauthority -clip 3840x2160+0+856 -rfbauth /home/USER/.vnc/passwd -rfbport PORT -o /home/USER/.vnc/gnome-shell-log.txt'
+ExecStartPre=+/bin/systemctl stop x11vnc-gdm-USER.service
+ExecStart=/bin/sh -c '/usr/bin/x11vnc -forever -shared -find -auth /home/USER/.Xauthority -clip 3840x2160+0+856 -rfbauth /home/USER/.vnc/passwd -rfbport PORT -o /home/USER/.vnc/gnome-shell-log.txt'
 Restart=on-failure
 RestartSec=3
 
@@ -63,20 +64,13 @@ Notes:
 to understand how services work and the `x11vnc` commandline options.
 - Remember to change for each user: `USER` (username), `PORT` (5900, 5901, 5902 etc. separate port for each user but same for both files), `-clip` (screen offsets for each user).
 - Notice how the second service waits while the user's X server is created, and then kills that user's login `x11vnc` server.
-- `SMALLUSER`s cannot sudo, so the `sudo systemctl stop x11vnc-gdm-USER.service` part is problematic. We can solve this by putting that command in a script in `/opt/vnc_commands`
-(a directory `BIGUSER` creates), and giving `SMALLUSER` permissions to execute _only_ that script as sudo. This is done as follows:
-- `BIGUSER` creates `/opt/vnc_commands/SMALLUSER_kill_login.sh` for each `SMALLUSER`, containing
+- Eventhough `SMALLUSER`s cannot sudo, the `+` in `ExecStartPre` allows the `/bin/systemctl stop x11vnc-gdm-USER.service` to run with full privileges.
+- Next, `BIGUSER` runs `sudo visudo` and adds the following lines (one per `SMALLUSER`) at the end of the file:
 ```bash
-#!/bin/sh
-sudo systemctl stop x11vnc-gdm-SMALLUSER.service
+SMALLUSER ALL=(ALL) NOPASSWD: /bin/fgconsole, /bin/chvt
 ```
-- Then `BIGUSER` runs `sudo visudo` and adds the following lines (one per `SMALLUSER`) at the end of the file:
-```bash
-SMALLUSER ALL=(ALL) NOPASSWD: /opt/vnc_commands/SMALLUSER_kill_login.sh, /bin/fgconsole, /bin/chvt
-```
-- Notice this also gives `SMALLUSER` to run `fgconsole` and `chvt` as sudo, which are useful for switching between users as described at the end of
+- This allows `SMALLUSER` to run `fgconsole` and `chvt` as sudo, which are useful for switching between users as described at the end of
 [Part 1]({{ site.baseurl }}{% post_url 2020-09-28-vnc_multiuser %}).
-- Finally, `sudo systemctl stop x11vnc-gdm-USER.service` in each `SMALLUSER`'s second service file is replaced with `sudo /opt/vnc_commands/SMALLUSER_kill_login.sh`.
 
 Finally, `BIGUSER` enables and starts both services for each user:
 
