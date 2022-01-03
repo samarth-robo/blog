@@ -4,7 +4,7 @@ title:  "RGB-D Rendering in Unity"
 tags: [simulation, robotics, unity]
 ---
 
-[**Example Unity Project**](https://github.com/samarth-robo/unity_rgbd_rendering)
+[**Example Unity Project** (GitHub)](https://github.com/samarth-robo/unity_rgbd_rendering)
 
 [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents) can be used to create simulation environments for
 Reinforcement Learning projects. Unity's [perception package](https://github.com/Unity-Technologies/com.unity.perception)
@@ -133,3 +133,9 @@ RenderTexture.active = render_tex;
 rgbd_im.ReadPixels(new Rect(0, 0, W, H), 0, 0);
 RenderTexture.active = prev;
 ```
+
+# Other sources I found useful
+- [Ronja's tutorial on Unity depth postprocessing](https://www.ronja-tutorials.com/post/017-postprocessing-depth/)
+- https://forum.unity.com/threads/adding-detph-to-channel-alpha.956193/
+- https://forum.unity.com/threads/rendertexture-with-both-rgb-and-depth.642049/
+- [Catlike Coding's Unity tutorials](https://catlikecoding.com/unity/tutorials/)
