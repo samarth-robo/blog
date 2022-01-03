@@ -6,7 +6,9 @@ permalink: /about/
 
 A techincal blog by [Samarth Brahmbhatt](https://samarth-robo.github.io/), discussing computer vision, robotics and machine learning.
 
-{% for tag in site.tags %}
+{% assign n = site.tags | size %}
+{% assign tags = site.tags | sample: n %}
+{% for tag in tags %}
   <h3>{{ tag[0] }}</h3>
   <ul>
     {% for post in tag[1] %}
