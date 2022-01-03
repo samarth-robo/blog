@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Unity ml-agents On Demand Decisions"
-tags: [simulation, machine_learning]
+tags: [simulation, machine_learning, reinforcement_learning, unity]
 ---
 
 [Unity `ml-agents`](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md) provides a nice simulation environment to learn and prototype
