@@ -6,23 +6,101 @@ tags: [remote_work]
 
 Working from home? [VSCode](https://code.visualstudio.com) is one of the best IDEs out there (they claim it is an "editor", but with proper extensions it becomes a full-blown IDE). [Remote work with SSH](https://code.visualstudio.com/docs/remote/ssh) is my favorite VSCode feature. It allows you to edit code locally but compile and run it on a remote server. All you need is an SSH connection. Everything works super smoothly.
 
+# General Instructions
+- Open the catkin workspace root directory in VSCode, instead of individual packages. This will help in compiling
+everything together and code navigation.
+- I had the habit of just symlinking various package directories in `catkin_ws/src` instead of actually having the code
+thre. But VSCode has [bugs](https://github.com/microsoft/vscode/issues/116064) that prevent Git change detection and
+code navigation for code that lives inside symlinks. So for ROS I now do not use symlinks inside `src`.
+
 # C++
-Lately I have been developing ROS C++ code with this setup. Since ROS uses the `catkin` build system, it can be a little difficult to configure the C++ IntelliSense (code navigation, auto-complete, etc.).
+Lately I have been developing ROS C++ code with this setup. The
+[VSCode ROS extension](https://marketplace.visualstudio.com/items?itemName=ms-iot.vscode-ros)
+does most of the legwork like setting up include paths and IntellSense databases for ROS (code navigation, auto-complete, etc.).
+However, it does not properly configure IntelliSense for the code *within* the package you are developing, so IntelliSense
+functions for navigating the code under development don't work (as of 23 Jan, 2022).
 
-[This blog post by Erdal](https://erdalpekel.de/?p=157) gives nice step-by-step instructions.
+[This blog post by Erdal](https://erdalpekel.de/?p=157) gives two crucial pieces of information:
+- Those paths can be provided to IntelliSense using the `compileCommands` field in `c_cpp_properties.json`. Its value
+should be the path to a `compile_commands.json` file.
+- CMake i.e. the build system used under the hood by catkin can be configured to produce `compile_commands.json` with
+the [`CMAKE_EXPORT_COMPILE_COMMANDS`](https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html)
+variable.
 
-I had to make one change, though: Instead of creating the new `catkin_make` task, I used the default `catkin: make` task that the VSCode ROS extension automatically creates.
-
-For IntelliSense to work, CMake in the `catkin: make` task needs to be configured to generate `compile_commands.json`, as the blog mentions. But the `catkin: make` task command cannot be edited. However, it simply runs `catkin build` (or `catkin_make`, whichever command you normally use to build ROS workspaces) under the hood. So I pre-configure catkin for my ROS workspace like so:
+Next, we can use [Tim Redick](https://gist.github.com/Tuebel)'s
+[`merge_compile_commands.sh`](https://gist.github.com/Tuebel/fd09c3c0f85c08bf417eecace16aecf3) script to merge the 
+`compile.commands.json`s from various packages in the whole catkin workspace. I have reproduced it below, put it in
+the root of your workspace.
 
 ```bash
-$ cd catkin_ws
-$ catkin config -a --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+#!/usr/bin/env bash
+printf '[' > compile_commands.json
+find ./build -type f -name 'compile_commands.json' -exec sh -c "cat {} | tail -n+2 | head -n-1 && printf ','" >> compile_commands.json \;
+sed -i '$s/.$//' compile_commands.json
+printf '\n]\n' >> compile_commands.json
 ```
 
-Note that I use [`catkin-tools`](https://catkin-tools.readthedocs.io/), not the simple `catkin` that ships with ROS.
+Below is my `tasks.json` that aliases `catkin: build` by renaming it to `catkin_build` and creating another task
+named `catkin: build` that depends on `catkin_build` and executes `merge_compile_commands.sh` afterwards. It also
+has the `CMAKE_EXPORT_COMPILE_COMMANDS` CMake directive, and a `catkin: clean` task.
 
-The above command caches the `CMAKE_EXPORT_COMPILE_COMMANDS` CMake argument in the catkin configuration. As mentioned in the blog, this CMake argument causes it to create `compile_commands.json` in `catkin_ws/build/<package_name>/`. If you point IntelliSense to this file using the `compileCommands` field in `c_cpp_properties.json` as mentioned in the blog, everything works :)
+```json
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "catkin",
+      "args": [
+        "build",
+        "--workspace",
+        "PATH_TO_WORKSPACE_ROOT", // <- CHANGE THIS
+        "--cmake-args",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",  // <- ADD OTHER CMAKE DIRECTIVES HERE
+      ],
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "label": "catkin_build"
+    },
+    {
+			"type": "catkin",
+			"args": [
+				"clean",
+				"--yes"
+			],
+			"problemMatcher": [
+				"$catkin-gcc"
+			],
+			"label": "catkin_clean"
+		},
+		{
+			"command": "${workspaceFolder}/merge_compile_commands.sh",
+			"type": "shell",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "catkin: build",
+			"problemMatcher": [],
+			"dependsOn": [
+				"catkin_build"
+			]
+		},
+		{
+			"command": "rm ${workspaceFolder}/compile_commands.json",
+			"type": "shell",
+			"problemMatcher": [],
+			"group": "build",
+			"label": "catkin: clean",
+			"dependsOn": [
+				"catkin_clean"
+			]
+		}
+  ]
+}
+```
+
+The only next step is to add `"compileCommands": "PATH_TO_WORKSPACE_ROOT/compile_commands.json"` to `.vscode/c_cpp_properties.json`.
 
 # Python
 - Use the new [Pylance](https://devblogs.microsoft.com/python/announcing-pylance-fast-feature-rich-language-support-for-python-in-visual-studio-code/)
