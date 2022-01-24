@@ -48,21 +48,21 @@ has the `CMAKE_EXPORT_COMPILE_COMMANDS` CMake directive, and a `catkin: clean` t
 {
 	"version": "2.0.0",
 	"tasks": [
-    {
-      "type": "catkin",
-      "args": [
-        "build",
-        "--workspace",
-        "PATH_TO_WORKSPACE_ROOT", // <- CHANGE THIS
-        "--cmake-args",
-        "-DCMAKE_EXPORT_COMPILE_COMMANDS=1",  // <- ADD OTHER CMAKE DIRECTIVES HERE
-      ],
-      "problemMatcher": [
-        "$catkin-gcc"
-      ],
-      "label": "catkin_build"
-    },
-    {
+		{
+			"type": "catkin",
+			"args": [
+				"build",
+				"--workspace",
+				"PATH_TO_WORKSPACE_ROOT", // <- CHANGE THIS
+				"--cmake-args",
+				"-DCMAKE_EXPORT_COMPILE_COMMANDS=1",  // <- ADD OTHER CMAKE DIRECTIVES HERE
+			],
+			"problemMatcher": [
+				"$catkin-gcc"
+			],
+			"label": "catkin_build"
+		},
+		{
 			"type": "catkin",
 			"args": [
 				"clean",
@@ -107,6 +107,6 @@ The only next step is to add `"compileCommands": "PATH_TO_WORKSPACE_ROOT/compile
 Python language server. Microsoft has shifted its efforts to that instead of the default Python languager server.
 - Make sure you follow [ROS recommendations](http://docs.ros.org/en/api/catkin/html/howto/format2/installing_python.html#modules) for Python
 nodes and moduled inside packages, and build the workspace once (e.g. using the `catkin: make` task discussed above).
-- Add your package path to Pylance's search paths in `settings.json`: `"python.analysis.extraPaths" = ["<path_to_ws>/src/<package_name>/src/<package_name>/src"]`. Currently (Dec 2020), variable substitution like `${workspaceFolder}` is not supported so you will have to use the full path.
+- Add your package path to Pylance's search paths in `settings.json`: `"python.analysis.extraPaths" = ["<path_to_ws>/src/<package_name>/src/<package_name>"]`. Currently (Dec 2020), variable substitution like `${workspaceFolder}` is not supported so you will have to use the full path.
 - Disable linting: `"python.linting.enabled": false`. I think linting is not very useful, and Pylance does a lot of convenience tasks anyway. If you do want
 linting, you will need to modify `~/.pylintrc` as [mentioned in this SO comment](https://stackoverflow.com/questions/43574995/visual-studio-code-pylint-unable-to-import-protorpc#comment106946541_55915465).
