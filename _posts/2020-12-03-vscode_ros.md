@@ -49,14 +49,8 @@ has the `CMAKE_EXPORT_COMPILE_COMMANDS` CMake directive, and a `catkin: clean` t
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "catkin",
-			"args": [
-				"build",
-				"--workspace",
-				"PATH_TO_WORKSPACE_ROOT", // <- CHANGE THIS
-				"--cmake-args",
-				"-DCMAKE_EXPORT_COMPILE_COMMANDS=1",  // <- ADD OTHER CMAKE DIRECTIVES HERE
-			],
+			"type": "shell",
+			"command": "catkin build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1"  // <- ADD OTHER CMAKE DIRECTIVES HERE
 			"problemMatcher": [
 				"$catkin-gcc"
 			],
