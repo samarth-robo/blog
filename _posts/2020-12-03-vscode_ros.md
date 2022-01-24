@@ -107,6 +107,7 @@ The only next step is to add `"compileCommands": "PATH_TO_WORKSPACE_ROOT/compile
 Python language server. Microsoft has shifted its efforts to that instead of the default Python languager server.
 - Make sure you follow [ROS recommendations](http://docs.ros.org/en/api/catkin/html/howto/format2/installing_python.html#modules) for Python
 nodes and moduled inside packages, and build the workspace once (e.g. using the `catkin: make` task discussed above).
-- Add your package path to Pylance's search paths in `settings.json`: `"python.analysis.extraPaths" = ["<path_to_ws>/src/<package_name>/src/<package_name>"]`. Currently (Dec 2020), variable substitution like `${workspaceFolder}` is not supported so you will have to use the full path.
+- Add your package path to Pylance's search paths in `.vscode/settings.json`: `"python.analysis.extraPaths" = ["<path_to_ws>/src/<package_name>/src/<package_name>"]`. Currently (Dec 2020), variable substitution like `${workspaceFolder}` is not supported so you will have to use the full path.
+- Especially useful if your package generates messages, services, and actions: Add `FULL_PATH_TO_WS_ROOT/devel/lib/python2.7/dist-packages` to `python.analysis.extraPaths` and `python.autoComplete.extraPaths` in `.vscode/settings.json`.
 - Disable linting: `"python.linting.enabled": false`. I think linting is not very useful, and Pylance does a lot of convenience tasks anyway. If you do want
 linting, you will need to modify `~/.pylintrc` as [mentioned in this SO comment](https://stackoverflow.com/questions/43574995/visual-studio-code-pylint-unable-to-import-protorpc#comment106946541_55915465).
