@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setting Up VSCode with ROS"
-tags: [remote_work]
+tags: [remote_work, ros, robotics, coding]
 ---
 
 Working from home? [VSCode](https://code.visualstudio.com) is one of the best IDEs out there (they claim it is an "editor", but with proper extensions it becomes a full-blown IDE). [Remote work with SSH](https://code.visualstudio.com/docs/remote/ssh) is my favorite VSCode feature. It allows you to edit code locally but compile and run it on a remote server. All you need is an SSH connection. Everything works super smoothly.
