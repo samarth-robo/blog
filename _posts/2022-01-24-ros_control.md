@@ -90,7 +90,7 @@ parameters - `param1` and `param2` here
 
 ## Notes
 
-- **Threading model**: [`controller_manager/spawner`](http://wiki.ros.org/controller_manager#spawner)), the actual node that loads
+- **Threading model**: [`controller_manager/spawner`](http://wiki.ros.org/controller_manager#spawner), the actual node that loads
 controllers, uses `rospy.spin()`. `rospy.spin()` has a complex threading model whose details are not well documented. Matthew Elwin
 [has investigated them in detail](https://nu-msr.github.io/me495_site/lecture08_threads.html). The relevant part is that
 _callbacks in the controller code can run in separate threads and are not thread-safe_. For example, see how
