@@ -39,7 +39,7 @@ PLUGINLIB_EXPORT_CLASS(eg_controller::MyController, controller_interface::Contro
 - Also for ROS pluginlib: put the following XML in `ws/src/eg_controller/eg_controller_plugin.xml`. Note how it references
 the shared library `libeg_controller` we compiled above.
 
-```
+```xml
 <library path="lib/libeg_controller">
   <class name="eg_controller/MyController" type="eg_controller::MyController" base_class_type="controller_interface::ControllerBase">
     <description>
@@ -51,7 +51,7 @@ the shared library `libeg_controller` we compiled above.
 
 - Last step for ROS pluginlib: put the following XML at the end of `ws/src/eg_controller/package.xml`
 
-```
+```xml
 <export>
   <controller_interface plugin="${prefix}/eg_controller_plugin.xml"/>
 </export>
@@ -62,7 +62,7 @@ dynamically loaded classes only, and not their complete ROS nodes, it is not pos
 The only way to configure them is to load their parmeters to the ROS parameter server in the proper namespace. Then the
 controller code can load them from that namespace. For example `ws/src/eg_controller/config/eg_controller.yaml`:
 
-```
+```yaml
 mycontroller:
   type: eg_controller/MyController
   param1: 108
@@ -78,7 +78,7 @@ parameters - `param1` and `param2` here
 
 - For example, you can load this controller in a launch file like so:
 
-```
+```xml
 <?xml version="1.0" ?>
 <launch>
   <!-- load MyController's parameters -->
@@ -87,3 +87,12 @@ parameters - `param1` and `param2` here
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="myconroller"/>
 </launch>
 ```
+
+## Notes
+
+- **Threading model**: [`controller_manager/spawner`](http://wiki.ros.org/controller_manager#spawner)), the actual node that loads
+controllers, uses `rospy.spin()`. `rospy.spin()` has a complex threading model whose details are not well documented. Matthew Elwin
+[has investigated them in detail](https://nu-msr.github.io/me495_site/lecture08_threads.html). The relevant part is that
+_callbacks in the controller code can run in separate threads and are not thread-safe_. For example, see how
+[`franka_ros/franka_example_controllers/CartesianImpedanceExampleController`](https://github.com/frankaemika/franka_ros/blob/develop/franka_example_controllers/src/cartesian_impedance_example_controller.cpp)
+uses a mutex.
