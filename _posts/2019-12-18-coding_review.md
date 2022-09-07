@@ -10,6 +10,7 @@ tags: [review, coding]
 - [Friend function](https://docs.microsoft.com/en-us/cpp/standard-library/overloading-the-output-operator-for-your-own-classes) use for overloading the `<<` operator
 - [Smart pointers (Sutter's Mill)](https://herbsutter.com/2013/05/29/gotw-89-solution-smart-pointers/)
 - [Smart pointers as function parameters (Sutter's Mill)](https://herbsutter.com/2013/06/05/gotw-91-solution-smart-pointer-parameters/)
+- [Template implementation (ISO C++)](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
 
 # Python
 - [deque](https://pymotw.com/3/collections/deque.html)
