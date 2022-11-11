@@ -20,7 +20,7 @@ M(\mathbf{q}) \ddot{\mathbf{q}} + C(\mathbf{q}, \dot{\mathbf{q}}) \dot{\mathbf{q
 $$
 
 where
-- $\mathbf{q}$ is the vector of all DoFs
+- $\mathbf{q}$ is the vector of all DoF positions
 - $M$ is the mass matrix
 - $C$ is the coriolis term
 - $\mathbf{u}$ is the control input (generalized force) at each DoF
