@@ -48,7 +48,9 @@ M(\mathbf{q}) \left( \ddot{\mathbf{q}}_d - \ddot{\mathbf{q}} \right) =
 K_D \left( \dot{\mathbf{q}}_d - \dot{\mathbf{q}}\right)
 $$
 
-This control input linearizes the system (might explain why PD control on robot DoFs is so popular).
+This formulation of the control input linearizes the system. This might explain why PD control on robot DoFs is so
+popular, and also why MuJoCo (a popular physics simulator) has a
+[soft (PD) constraint model](https://mujoco.readthedocs.io/en/latest/computation.html#constraint-model).
 Setting $\mathbf{e} = \mathbf{q}_d - \mathbf{q}$ we get
 
 $$
