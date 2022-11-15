@@ -18,11 +18,17 @@ Put all your work repositories in one directory, for example `~/work`. Next, add
 
 ```
 [includeIf "gitdir:~/work"]
-  [user]
-    email = <YOUR WORK EMAIL ADDRESS>
-    name = <YOUR WORK NAME>
-  [core]
-    sshCommand = ssh -i ~/.ssh/work_key
+  path = ~/.gitconfig_work
+```
+
+Finally, create `~/.gitconfig_work` with the following lines:
+
+```
+[user]
+  email = <YOUR WORK EMAIL ADDRESS>
+  name = <YOUR WORK NAME>
+[core]
+  sshCommand = ssh -i ~/.ssh/work_key
 ```
 
 The config makes `git` SSH with the key in `~/.ssh/work_key` when cloning, pulling from, and pushing to repositories
