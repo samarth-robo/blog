@@ -17,11 +17,11 @@ work GitHub account.
 Put all your work repositories in one directory, for example `~/work`. Next, add the following lines to `~/.gitconfig`:
 
 ```
-[includeIf "gitdir:~/work"]
+[includeIf "gitdir:~/work/"]
   path = ~/.gitconfig_work
 ```
 
-Finally, create `~/.gitconfig_work` with the following lines:
+Note the `/` at the end of the directory path, which includes all subdirectories. Finally, create `~/.gitconfig_work` with the following lines:
 
 ```
 [user]
