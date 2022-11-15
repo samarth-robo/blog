@@ -2,7 +2,7 @@
 layout: mathpost
 title:  "Control Basics for Robot Manipulation"
 mathjax: true
-tags: [robotics, control, simulation]
+tags: [robotics, control]
 ---
 
 Robot manipulation involves precise and/or reactive motion of the robot arm, often focused at the end-effector. A
