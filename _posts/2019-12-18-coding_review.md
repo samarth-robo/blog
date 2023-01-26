@@ -31,3 +31,5 @@ Here are the ones I've solved from now on:
 - [865. Smallest Subtree with all the Deepest Nodes](https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/)
 - [609. Find Duplicate File in System](https://leetcode.com/problems/find-duplicate-file-in-system/)
 - [24. Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+- [1. Two Sum](https://leetcode.com/problems/two-sum)
+- Sample from a given probability density function list, using only a uniform random number generator
