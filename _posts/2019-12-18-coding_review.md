@@ -34,3 +34,4 @@ Here are the ones I've solved from now on:
 - [1. Two Sum](https://leetcode.com/problems/two-sum)
 - Sample from a given probability density function list, using only a uniform random number generator
 - IoU from given bounding boxes
+- Non-maximum suppression
