@@ -31,4 +31,8 @@ which is an eigen decomposition of $AA^T$. Eigenvalues are squared elements of $
 
 # Miscellaneous
 - For skew-symmetric $A$, $\mathbf{x}^T A \mathbf{x} = 0$, $\forall \mathbf{x}$.
-- Matrix $A$ is positive semidefinite $A \succeq 0$ iff all its eigenvalues are $\geq 0$. 
+- Matrix $A$ is positive semidefinite $A \succeq 0$ iff all its eigenvalues are $\geq 0$.
+
+# TODO
+- Fit plane to a set of points with SVD
+- Umeyama method
