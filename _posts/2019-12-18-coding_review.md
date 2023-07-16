@@ -11,6 +11,11 @@ tags: [review, coding]
 - [Smart pointers (Sutter's Mill)](https://herbsutter.com/2013/05/29/gotw-89-solution-smart-pointers/)
 - [Smart pointers as function parameters (Sutter's Mill)](https://herbsutter.com/2013/06/05/gotw-91-solution-smart-pointer-parameters/)
 - [Template implementation (ISO C++)](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)
+- [`lvalue` and `rvalue`](https://learn.microsoft.com/en-us/cpp/cpp/lvalues-and-rvalues-visual-cpp)
+- [Move](https://stackoverflow.com/a/3109981/2469613) [semantics](https://herbsutter.com/2020/02/17/move-simply/)
+- [The `&&` operator and perfect forwarding](https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp)
+- [`std::unique_ptr<T>`](https://learn.microsoft.com/en-us/cpp/cpp/how-to-create-and-use-unique-ptr-instances), [`std::shared_ptr<T>`](https://learn.microsoft.com/en-us/cpp/cpp/how-to-create-and-use-shared-ptr-instances), and [`std::weak_ptr<T>`](https://learn.microsoft.com/en-us/cpp/cpp/how-to-create-and-use-weak-ptr-instances?view=msvc-170)
+- 
 
 # Python
 - [deque](https://pymotw.com/3/collections/deque.html)
