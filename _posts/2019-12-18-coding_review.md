@@ -40,3 +40,5 @@ Here are the ones I've solved from now on:
 - Sample from a given probability density function list, using only a uniform random number generator
 - IoU from given bounding boxes
 - Non-maximum suppression
+- [1048. Longest String Chain](https://leetcode.com/problems/longest-string-chain)
+- [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses)
