@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Write a ROS controller"
-tags: [robotics, ros]
+tags: [robotics, ros, control]
 ---
 
 If you are writing a [ROS controller](http://wiki.ros.org/ros_control), that means you are working with a real robot.

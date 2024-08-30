@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "RGB-D Rendering in Unity"
-tags: [simulation, robotics, unity]
+tags: [simulation, robotics]
 ---
 
 [**Example Unity Project** (GitHub)](https://github.com/samarth-robo/unity_rgbd_rendering)

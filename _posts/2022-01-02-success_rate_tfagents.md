@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Measuring Policy Success Rate in TF-Agents"
-tags: [reinforcement_learning, tf_agents]
+tags: [reinforcement_learning, coding]
 ---
 
 Success rate of the agent (fraction of episodes which end because the agent solved the task successfully) can be a

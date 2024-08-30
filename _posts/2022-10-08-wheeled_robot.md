@@ -2,7 +2,7 @@
 layout: mathpost
 title:  "Wheeled Robot Motion"
 mathjax: true
-tags: [robotics]
+tags: [robotics, control]
 ---
 In this post we will analyze the motion of a simple 2-wheeled robot, shown in the image below. The analysis will result
 in wheel velocity command equations for reaching a target.
